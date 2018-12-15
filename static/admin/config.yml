@@ -13,26 +13,61 @@ collections:
         label: 'Home'
         name: 'home'
         fields:
+          - label: 'Template Key'
+            name: 'templateKey'
+            widget: 'hidden'
+            default: 'home'
+          - { label: 'Hero Tagline', name: 'heroTagline', widget: 'string' }
+          - { label: 'Button Text', name: 'buttonText', widget: 'string' }
+          - { label: 'Body Title', name: 'bodyTitle', widget: 'string' }
+          - { label: 'Body Text', name: 'bodyText', widget: 'markdown' }
           - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'home',
-            }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
+            label: 'Portfolio Title',
+            name: 'portfolioTitle',
+            widget: 'string',
+          }
+          - label: 'Portfolio Items'
+            name: 'portfolioItem'
+            widget: 'list'
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
+              - {
+                  label: 'Link',
+                  name: 'linkSlug',
+                  widget: 'relation',
+                  collection: 'pages',
+                  searchFields: ['label'],
+                  valueField: 'slug',
+                }
+          - { label: 'Testimonials Title', name: 'testimonialsTitle', widget: 'string' }
+          - label: 'Testimonials'
+            name: 'testimonial'
+            widget: 'list'
+            create: true
+            fields:
+              - {
+                  label: 'Quote', name: 'quote', widget: 'string',
+                }
+              - label: 'Person'
+                name: 'person'
+                widget: 'string'
+              - label: 'Workplace'
+                name: 'workplace'
+                widget: 'string'
 
   - name: 'pages'
     folder: 'src/pages/pages'
     create: true
-    label: 'Other Pages'
+    label: 'Page'
     slug: '{{slug}}'
     fields:
       - {
-          label: 'Template Key',
-          name: 'templateKey',
-          widget: 'hidden',
-          default: 'page',
+        label: 'Template Key',
+        name: 'templateKey',
+        widget: 'hidden',
+        default: 'page',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }

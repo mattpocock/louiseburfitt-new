@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HomePageTemplate } from '../../templates/home';
 
-const HomePagePreview = ({ entry, widgetFor }) => (
+const HomePagePreview = ({ widgetFor }) => (
   <HomePageTemplate
-    title={entry.getIn(['data', 'title'])}
-    content={widgetFor('body')}
+    title={widgetFor('bodyTitle')}
+    content={widgetFor('bodyText')}
   />
 );
 
