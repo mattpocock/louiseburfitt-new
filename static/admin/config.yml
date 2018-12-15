@@ -17,10 +17,10 @@ collections:
             name: 'templateKey'
             widget: 'hidden'
             default: 'home'
-          - { label: 'Hero Tagline', name: 'heroTagline', widget: 'string' }
-          - { label: 'Button Text', name: 'buttonText', widget: 'string' }
-          - { label: 'Body Title', name: 'bodyTitle', widget: 'string' }
-          - { label: 'Body Text', name: 'bodyText', widget: 'markdown' }
+          - { label: 'Hero Tagline', name: 'heroTagline', widget: 'string', default: 'Hero Tagline' }
+          - { label: 'Button Text', name: 'buttonText', widget: 'string', default: 'Button Text' }
+          - { label: 'Body Title', name: 'bodyTitle', widget: 'string', default: 'Body Title' }
+          - { label: 'Body Text', name: 'bodyText', widget: 'markdown', default: 'Some text' }
           - {
             label: 'Portfolio Title',
             name: 'portfolioTitle',
