@@ -2,6 +2,7 @@
 templateKey: home
 heroTagline: Hero Tagline
 buttonText: Button Text
+type: page
 bodyTitle: Body Title
 portfolioTitle: Experience
 portfolioItems:

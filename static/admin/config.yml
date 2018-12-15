@@ -17,6 +17,10 @@ collections:
             name: 'templateKey'
             widget: 'hidden'
             default: 'home'
+          - label: 'Type'
+            name: 'type'
+            widget: 'hidden'
+            default: 'page'
           - { label: 'Hero Tagline', name: 'heroTagline', widget: 'string', default: 'Hero Tagline' }
           - { label: 'Button Text', name: 'buttonText', widget: 'string', default: 'Button Text' }
           - { label: 'Body Title', name: 'bodyTitle', widget: 'string', default: 'Body Title' }
@@ -60,11 +64,13 @@ collections:
     label: 'Page'
     slug: '{{slug}}'
     fields:
-      - {
-        label: 'Template Key',
-        name: 'templateKey',
-        widget: 'hidden',
-        default: 'page',
-        }
+      - label: 'Type'
+        name: 'type'
+        widget: 'hidden'
+        default: 'page'
+      - label: 'Template Key'
+        name: 'templateKey'
+        widget: 'hidden'
+        default: 'page'
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
