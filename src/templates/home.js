@@ -32,16 +32,13 @@ HomePageTemplate.propTypes = {
 };
 
 const HomePage = ({ data }) => {
-  const {
-    markdownRemark: { html },
-  } = data;
-
+  console.log(data);
   return (
     <Layout>
       <HomePageTemplate
         contentComponent={HTMLContent}
         title="Hello"
-        content={html}
+        content={JSON.stringify(data)}
       />
     </Layout>
   );
@@ -54,11 +51,29 @@ HomePage.propTypes = {
 export default HomePage;
 
 export const HomePageQuery = graphql`
-  query HomePage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query HomePage {
+    markdownRemark(frontmatter: { templateKey: { eq: "home" } }) {
       html
       frontmatter {
-        title
+        bodyTitle
+        heroTagline
+        portfolioTitle
+        portfolioItems {
+          image {
+            relativePath
+            name
+          }
+          linkSlug
+          subtitle
+          title
+        }
+        testimonialsTitle
+        testimonials {
+          person
+          quote
+          workplace
+        }
+        buttonText
       }
     }
   }

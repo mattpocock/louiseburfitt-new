@@ -20,14 +20,14 @@ collections:
           - { label: 'Hero Tagline', name: 'heroTagline', widget: 'string', default: 'Hero Tagline' }
           - { label: 'Button Text', name: 'buttonText', widget: 'string', default: 'Button Text' }
           - { label: 'Body Title', name: 'bodyTitle', widget: 'string', default: 'Body Title' }
-          - { label: 'Body Text', name: 'bodyText', widget: 'markdown', default: 'Some text' }
+          - { label: 'Body Text', name: 'body', widget: 'markdown', default: 'Some text' }
           - {
             label: 'Portfolio Title',
             name: 'portfolioTitle',
             widget: 'string',
           }
           - label: 'Portfolio Items'
-            name: 'portfolioItem'
+            name: 'portfolioItems'
             widget: 'list'
             fields:
               - { label: 'Image', name: 'image', widget: 'image' }
@@ -36,14 +36,11 @@ collections:
               - {
                   label: 'Link',
                   name: 'linkSlug',
-                  widget: 'relation',
-                  collection: 'pages',
-                  searchFields: ['label'],
-                  valueField: 'slug',
+                  widget: 'string',
                 }
           - { label: 'Testimonials Title', name: 'testimonialsTitle', widget: 'string' }
           - label: 'Testimonials'
-            name: 'testimonial'
+            name: 'testimonials'
             widget: 'list'
             create: true
             fields:
