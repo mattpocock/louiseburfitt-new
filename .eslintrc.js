@@ -27,6 +27,9 @@ module.exports = {
     'import/no-unresolved': 2,
     'import/no-webpack-loader-syntax': 0,
     'import/prefer-default-export': 0,
+    'arrow-parens': 0,
+    'no-extra-boolean-cast': 0,
+    'react/jsx-one-expression-per-line': 0,
     indent: [
       2,
       2,
