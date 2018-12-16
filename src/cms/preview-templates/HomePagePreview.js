@@ -4,8 +4,9 @@ import { HomePageTemplate } from '../../templates/home';
 
 const HomePagePreview = ({ widgetFor }) => (
   <HomePageTemplate
-    title={widgetFor('bodyTitle')}
+    heroTagline={widgetFor('heroTagline')}
     content={widgetFor('body')}
+    buttonText={widgetFor('buttonText')}
   />
 );
 

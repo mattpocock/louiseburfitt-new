@@ -1,43 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
+
+// import Col from 'react-bootstrap/lib/Col';
+// import Row from 'react-bootstrap/lib/Row';
+import Grid from 'react-bootstrap/lib/Grid';
+import theme from '../theme';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import Button from '../components/Button';
 
-export const HomePageTemplate = ({ title, content, contentComponent }) => {
+export const HomePageTemplate = ({
+  heroTagline,
+  content,
+  buttonText,
+  contentComponent,
+}) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title || ''}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <React.Fragment>
+      <BackdropGrid fluid>
+        <Grid style={{ textAlign: 'center' }}>
+          <Title>{heroTagline || ''}</Title>
+          <Button withShadow>{buttonText || ''}</Button>
+        </Grid>
+      </BackdropGrid>
+      <LightBackdropGrid fluid>
+        <Grid>
+          <PageContent className="content" content={content} />
+        </Grid>
+      </LightBackdropGrid>
+    </React.Fragment>
   );
 };
 
 HomePageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
+  heroTagline: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  buttonText: PropTypes.string.isRequired,
 };
 
 const HomePage = ({ data }) => {
   console.log(data);
+  const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
       <HomePageTemplate
         contentComponent={HTMLContent}
-        title="Hello"
+        heroTagline={frontmatter.heroTagline}
+        buttonText={frontmatter.buttonText}
         content={JSON.stringify(data)}
       />
     </Layout>
@@ -49,6 +63,24 @@ HomePage.propTypes = {
 };
 
 export default HomePage;
+
+const BackdropGrid = styled(Grid)`
+  color: white;
+  background-color: ${theme.midFrosty};
+  padding: 6rem 0rem;
+`;
+
+const Title = styled.h1`
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 2rem;
+`;
+
+const LightBackdropGrid = styled(Grid)`
+  background-color: ${theme.superLightGrey};
+  padding: 4rem 0rem;
+`;
 
 export const HomePageQuery = graphql`
   query HomePage {

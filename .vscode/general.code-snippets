@@ -1,0 +1,22 @@
+{
+  "Bootstrap": {
+    "prefix": ["import Grid", "import Col", "import Row"],
+    "body": [
+      "import Col from 'react-bootstrap/lib/Col';",
+      "import Row from 'react-bootstrap/lib/Row';",
+      "import Grid from 'react-bootstrap/lib/Grid';"
+    ]
+  },
+  "snippet": {
+    "prefix": ["snip"],
+    "body": ["\"$1\": {", "  \"prefix\": \"$1\",", "  \"body\": \"$1\"", "},"]
+  },
+  "import theme from '../theme';": {
+    "prefix": "import theme from '../theme';",
+    "body": "import theme from '../theme';"
+  },
+  "import styled from 'styled-components';": {
+    "prefix": "import styled from 'styled-components';",
+    "body": "import styled from 'styled-components';"
+  },
+}
