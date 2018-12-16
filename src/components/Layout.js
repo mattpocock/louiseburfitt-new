@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import 'bootstrap-css-only/css/bootstrap.min.css';
 
 import Navbar from './Navbar';
+import 'bootstrap-css-only/css/bootstrap.min.css';
 import './global.css';
 
 const TemplateWrapper = ({ children }) => (
@@ -50,10 +50,6 @@ const TemplateWrapper = ({ children }) => (
             rel="mask-icon"
             href="/img/safari-pinned-tab.svg"
             color="#ff4400"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700"
-            rel="stylesheet"
           />
           <meta name="theme-color" content="#fff" />
           <meta property="og:type" content="business.business" />

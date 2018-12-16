@@ -9,7 +9,7 @@ export default styled.button`
   font-weight: 1000;
   text-transform: uppercase;
   border-radius: 0.5rem;
-  border: 0.2rem solid ${theme.midBright};
+  border: 2px solid ${theme.midBright};
   box-shadow: ${(props) =>
     props.withShadow ? '0px 3px 6px rgba(0,0,0,0.16)' : 'none'};
   &:focus {
